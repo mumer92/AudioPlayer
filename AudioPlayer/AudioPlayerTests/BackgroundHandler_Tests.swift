@@ -57,7 +57,7 @@ class BackgroundHandler_Tests: XCTestCase {
         var handler: (() -> ())?
         application.onBegin = { h in
             handler = h
-            return 1
+            return UIBackgroundTaskIdentifier(rawValue: 1)
         }
         XCTAssert(backgroundHandler.beginBackgroundTask())
         XCTAssertNotNil(handler)
